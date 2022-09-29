@@ -10,10 +10,10 @@ async def main(url):
 
     async with aiohttp.ClientSession() as session:
 
-        for i in tqdm(range(1000)):
+        for i in tqdm(range(10)):
             url = url
             async with session.get(url) as resp:
-                pokemon = await resp.text()
+                data = await resp.text()
 
 
 asyncio.run(main(input("Введите URL адрес: ")))
